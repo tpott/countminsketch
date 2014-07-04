@@ -82,6 +82,12 @@ class CountMinSketch(object):
         """
         return self.query(x)
 
+    def __setitem__(self, k, v):
+        """
+        A convenience method to call `add(k, value=v)`
+        """
+        return self.add(k, value=v)
+
     def __len__(self):
         """
         The amount of things counted. Takes into account that the `value`
